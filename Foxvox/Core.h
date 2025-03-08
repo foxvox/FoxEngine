@@ -1,17 +1,14 @@
-#pragma once
+#pragma once 
+
 class Core
 {
+public:
+	SINGLETON(Core);
 private:
 	Core();
 	~Core();
 public:
-	static Core* GetInstance()
-	{
-		static Core instance;
-
-		return &instance;
-	}
-
+	int Init();
 	void Run();
 };
 

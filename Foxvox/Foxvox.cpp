@@ -1,4 +1,5 @@
-﻿#include "framework.h"
+﻿#include "pch.h" 
+#include "framework.h"
 #include "Foxvox.h" 
 #include "Core.h" 
 
@@ -30,6 +31,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     if (!InitInstance (hInstance, nCmdShow))
     {
         return FALSE;
+    } 
+
+    if (FAILED(Core::GetInstance()->Init())) 
+    {
+		MessageBoxW(g_hWnd, L"Core Init Failed", L"Error", MB_OK); 
+        return FALSE; 
     }
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_FOXVOX));
@@ -50,8 +57,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 			}
 		}
         else
-        {
-            Core::GetInstance()->Run();
+        {            
         }
     }
 

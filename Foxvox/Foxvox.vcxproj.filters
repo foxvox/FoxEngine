@@ -11,32 +11,43 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Default\소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Engine\01.Header">
       <UniqueIdentifier>{555f1794-1a01-4df0-9da8-a691a9142fce}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\02.Core">
       <UniqueIdentifier>{e30f2362-1366-4b30-8464-1aa77c6796bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03.Mgr">
+      <UniqueIdentifier>{a10fe7f1-5527-408d-8524-e12711a5cd8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Mgr\KeyMgr">
+      <UniqueIdentifier>{996c0bc3-0eb5-4a9b-87b3-3459b77f6f3e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
       <Filter>Engine\02.Core</Filter>
     </ClInclude>
-    <ClInclude Include="Foxvox.h">
+    <ClInclude Include="define.h">
       <Filter>Engine\01.Header</Filter>
     </ClInclude>
-    <ClInclude Include="framework.h">
-      <Filter>Engine\01.Header</Filter>
+    <ClInclude Include="KeyMgr.h">
+      <Filter>Engine\03.Mgr\KeyMgr</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Engine\01.Header</Filter>
+    <ClInclude Include="pch.h">
+      <Filter>Default</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Engine\01.Header</Filter>
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Foxvox.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Default</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,11 +64,14 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Foxvox.cpp">
-      <Filter>Default\소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Core.cpp">
       <Filter>Engine\02.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMgr.cpp">
+      <Filter>Engine\03.Mgr\KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Foxvox.cpp">
+      <Filter>Default</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
