@@ -1,4 +1,7 @@
 #pragma once 
 
-#include <Windows.h> 
-#include "define.h" 
+#include <windows.h> 
+#include <iostream> 
+
+#include "Define.h" 
+#include "Math.h" 

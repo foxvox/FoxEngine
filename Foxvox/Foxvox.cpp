@@ -14,7 +14,7 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름�
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM); 
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -33,7 +33,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     } 
 
-    if (FAILED(Core::GetInstance()->Init())) 
+    if (FAILED(Core::GetInstance()->Init(g_hWnd, Vector2(1280, 768)))) 
     {
 		MessageBoxW(g_hWnd, L"Core Init Failed", L"Error", MB_OK); 
         return FALSE; 
@@ -43,21 +43,23 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
     
-    while (true)
+    while (TRUE)
     {
 		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 		{
 			if (msg.message == WM_QUIT)
 				break;
 
-			if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+			if (!TranslateAcceleratorW(msg.hwnd, hAccelTable, &msg))
 			{
 				TranslateMessage(&msg);
 				DispatchMessage(&msg);
 			}
 		}
         else
-        {            
+        {
+            // 게임 실행 부분 
+            Core::GetInstance()->Run(); 
         }
     }
 
@@ -126,11 +128,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
         }
         break;
-    case WM_PAINT:
+	case WM_PAINT: // 무효화 영역(Invalidate)이 발생하면 호출된다. 
         {
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+            // 원하는 창 사이즈임을 확인
+			// Rectangle(hdc, 1180, 0, 1280, 768);            
+
             EndPaint(hWnd, &ps);
         }
         break;

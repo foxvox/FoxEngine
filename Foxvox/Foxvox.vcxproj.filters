@@ -23,12 +23,18 @@
     <Filter Include="Engine\03.Mgr\KeyMgr">
       <UniqueIdentifier>{996c0bc3-0eb5-4a9b-87b3-3459b77f6f3e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04.Object">
+      <UniqueIdentifier>{aa16874f-b0a5-46d7-bf68-4bbd9bbcdb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Mgr\TimeMgr">
+      <UniqueIdentifier>{9499150b-959c-4d74-83d6-0c3b2db15d4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
       <Filter>Engine\02.Core</Filter>
     </ClInclude>
-    <ClInclude Include="define.h">
+    <ClInclude Include="Define.h">
       <Filter>Engine\01.Header</Filter>
     </ClInclude>
     <ClInclude Include="KeyMgr.h">
@@ -48,6 +54,15 @@
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Engine\04.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Engine\01.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeMgr.h">
+      <Filter>Engine\03.Mgr\TimeMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +87,12 @@
     </ClCompile>
     <ClCompile Include="Foxvox.cpp">
       <Filter>Default</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Engine\04.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeMgr.cpp">
+      <Filter>Engine\03.Mgr\TimeMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
