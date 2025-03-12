@@ -5,15 +5,16 @@ class Core
 	SINGLETON(Core); 
 
 private:
-	HWND	hWnd;
-	Vector2	wndSize;
-	HDC		hDC;
+	HWND		hWnd;
+	HDC			hDC;
+	Vector2		wndSize;
 
 public:
-	HWND GetHwnd() const { return hWnd; }
-	Vector2 GetWndSize() const { return wndSize; }
-	int Init(HWND _hWnd, Vector2 _wndSize); 
-	void Run(); 
+	HWND	GetMyWnd() const { return hWnd; }
+	HDC		GetMyDC() const { return hDC; } 
+	Vector2	GetWndSize() const { return wndSize; }
+	int		Init(HWND _hWnd, Vector2 _wndSize); 
+	void	Run(); 
 
 private:
 	void Render();	

@@ -5,4 +5,8 @@ KeyMgr::KeyMgr()
 {}
 
 KeyMgr::~KeyMgr()
-{} 
+{}
+
+void KeyMgr::Init()
+{
+}

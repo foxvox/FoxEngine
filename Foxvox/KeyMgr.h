@@ -2,7 +2,9 @@
 
 class KeyMgr
 {
-public:
 	SINGLETON(KeyMgr);
+
+public:
+	void Init(); 
 };
 

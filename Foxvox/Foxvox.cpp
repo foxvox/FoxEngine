@@ -33,7 +33,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     } 
 
-    if (FAILED(Core::GetInstance()->Init(g_hWnd, Vector2(1280, 768)))) 
+    if (FAILED(Core::GetInst()->Init(g_hWnd, Vector2(1280, 768)))) 
     {
 		MessageBoxW(g_hWnd, L"Core Init Failed", L"Error", MB_OK); 
         return FALSE; 
@@ -59,7 +59,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         else
         {
             // 게임 실행 부분 
-            Core::GetInstance()->Run(); 
+            Core::GetInst()->Run(); 
         }
     }
 
