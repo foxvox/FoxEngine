@@ -9,6 +9,9 @@ private:
 	HDC			hDC;
 	Vector2		wndSize;
 
+	HBITMAP		hBit;
+	HDC			memDC;
+
 public:
 	HWND	GetMyWnd() const { return hWnd; }
 	HDC		GetMyDC() const { return hDC; } 
