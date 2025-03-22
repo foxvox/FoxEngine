@@ -29,6 +29,27 @@
     <Filter Include="Engine\03.Mgr\TimeMgr">
       <UniqueIdentifier>{9499150b-959c-4d74-83d6-0c3b2db15d4b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05.Scene">
+      <UniqueIdentifier>{e922c116-fcf1-43e5-bbcc-21753b785f9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Mgr\SceneMgr">
+      <UniqueIdentifier>{69aafca9-5986-448c-8c04-c27a16fb7f6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene\SceneStart">
+      <UniqueIdentifier>{c54ef143-4b6f-4ecb-9052-c715f193a858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene\SceneTool">
+      <UniqueIdentifier>{b2559b61-bcc8-4e1d-a29e-e049ea84ed3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\Player">
+      <UniqueIdentifier>{5fd811d4-d891-49ab-9856-d6e8863172ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\Monster">
+      <UniqueIdentifier>{a6ec7cf3-1f52-47d4-ad86-b2362532860e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\Missile">
+      <UniqueIdentifier>{675e5703-5659-43e5-9547-89ae8f1b0057}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -58,11 +79,32 @@
     <ClInclude Include="Object.h">
       <Filter>Engine\04.Object</Filter>
     </ClInclude>
-    <ClInclude Include="Math.h">
+    <ClInclude Include="FoxMath.h">
       <Filter>Engine\01.Header</Filter>
     </ClInclude>
     <ClInclude Include="TimeMgr.h">
       <Filter>Engine\03.Mgr\TimeMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Engine\05.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>Engine\03.Mgr\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStart.h">
+      <Filter>Engine\05.Scene\SceneStart</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTool.h">
+      <Filter>Engine\05.Scene\SceneTool</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Engine\04.Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Engine\04.Object\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Missile.h">
+      <Filter>Engine\04.Object\Missile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +135,27 @@
     </ClCompile>
     <ClCompile Include="TimeMgr.cpp">
       <Filter>Engine\03.Mgr\TimeMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Engine\05.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>Engine\03.Mgr\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStart.cpp">
+      <Filter>Engine\05.Scene\SceneStart</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTool.cpp">
+      <Filter>Engine\05.Scene\SceneTool</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Engine\04.Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Engine\04.Object\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Missile.cpp">
+      <Filter>Engine\04.Object\Missile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

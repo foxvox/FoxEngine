@@ -25,7 +25,7 @@ void TimeMgr::Update()
 void TimeMgr::CheckFPS()
 {
 	// 2번째 부터 curCnt 적용 
-	if (!isFirst) 
+	if (!isFirst)   
 	{
 		
 		QueryPerformanceCounter(&curCnt);
@@ -36,17 +36,17 @@ void TimeMgr::CheckFPS()
 	callCnt++;
 	acct += dt;
 
-	if (acct >= 1.f)
+	if (acct > 1.f)
 	{
 		fps = callCnt;
 
 		// 윈도우 타이틀에 프레임 수 기록
 		wchar_t title[256]{};
 		swprintf_s(title, L"fps: %d, dt: %f", fps, dt);
-		SetWindowTextW(Core::GetInst()->GetMyWnd(), title);
+		SetWindowTextW(CORE->GetMainWnd(), title);
 
 		callCnt = 0;
-		acct = 0.;
+		acct = 0.f;
 	}
 
 	isFirst = false;

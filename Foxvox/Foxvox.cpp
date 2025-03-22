@@ -33,7 +33,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     } 
 
-    if (FAILED(Core::GetInst()->Init(g_hWnd, Vector2(1280, 768)))) 
+    if (FAILED(CORE->Init(g_hWnd, Vector2(1280, 768)))) 
     {
 		MessageBoxW(g_hWnd, L"Core Init Failed", L"Error", MB_OK); 
         return FALSE; 
@@ -43,7 +43,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
     
-    while (TRUE)
+    while (true) 
     {
 		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 		{
@@ -59,7 +59,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         else
         {
             // 게임 실행 부분 
-            Core::GetInst()->Run(); 
+            CORE->Run(); 
         }
     }
 
@@ -131,9 +131,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_PAINT: // 무효화 영역(Invalidate)이 발생하면 호출된다. 
         {
             PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // 원하는 창 사이즈임을 확인
-			// Rectangle(hdc, 1180, 0, 1280, 768);            
+            HDC hdc = BeginPaint(hWnd, &ps);           
 
             EndPaint(hWnd, &ps);
         }

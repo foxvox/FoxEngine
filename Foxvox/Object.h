@@ -1,21 +1,21 @@
 ﻿#pragma once
 
-class Object
+class Object 
 {
-private:
-	Vector2 pos; 
-	Vector2 size; 
+protected:
+	Vector2		 pos; 
+	Vector2		 scale; 
 
-public:
-	Object();
-	~Object(); 
+public:	
+	Vector2		 GetPos() const { return pos; }
+	void		 SetPos(const Vector2& _pos) { pos = _pos; } 
+	Vector2		 GetScale() const { return scale; }
+	void		 SetScale(const Vector2& _scale) { scale = _scale; }
 
-	// pos 프로퍼티의 getter와 setter
-	Vector2 GetPos() const { return pos; }
-	void SetPos(const Vector2& _pos) { pos = _pos; }
+	virtual void Update() = 0; 
+	virtual void Render(HDC _dc); 
 
-	// size 프로퍼티의 getter와 setter
-	Vector2 GetSize() const { return size; }
-	void SetSize(const Vector2& _size) { size = _size; }
+				 Object();
+	virtual		~Object();
 };
 

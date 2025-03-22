@@ -5,25 +5,25 @@ class Core
 	SINGLETON(Core); 
 
 private:
-	HWND		hWnd;
-	HDC			hDC;
-	Vector2		wndSize;
+	HWND		wnd;
+	HDC			dc;
+	Vector2		wndScale;
 
-	HBITMAP		hBit;
-	HDC			memDC;
+	HBITMAP		bitmap;
+	HDC			memdc; 
 
 public:
-	HWND	GetMyWnd() const { return hWnd; }
-	HDC		GetMyDC() const { return hDC; } 
-	Vector2	GetWndSize() const { return wndSize; }
-	int		Init(HWND _hWnd, Vector2 _wndSize); 
+	HWND	GetMainWnd() const { return wnd; }
+	HDC		GetMainDC() const { return dc; } 	
+	Vector2	GetWndScale() const { return wndScale; }
+	HBITMAP GetBitmap() const { return bitmap; }
+	HDC		GetMemDC() const { return memdc; } 
+
+	int		Init(HWND _hWnd, Vector2 _wndScale); 
 	void	Run(); 
 
 private:
 	void Render();	
 	void Update(); 
-
-	void CallCntCheck() const;  
-	void ArrowKeyEx() const;
 };
 
